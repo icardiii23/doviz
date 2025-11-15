@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Döviz Kurları</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f2f2f2;
+    color: #222;
+    transition: 0.3s ease;
+  }
+
+  body.dark {
+    background: #121212;
+    color: #eee;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 28px;
+    color: #d4a84e;
+  }
+
+  .modeButton {
+    display: block;
+    margin: 10px auto 20px auto;
+    padding: 8px 20px;
+    background: #d4a84e;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+  }
+
+  .modeButton:hover {
+    filter: brightness(0.9);
+  }
+
+  .container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+  }
+
+  body.dark .container {
+    background: #1b1b1b;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 14px 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+  }
+
+  body.dark td, body.dark th {
+    border-bottom: 1px solid #333;
+  }
+
+  th {
+    text-align: left;
+    color: #d4a84e;
+  }
+
+  tr {
+    transition: 0.3s;
+  }
+
+  tr:hover {
+    background: rgba(212, 168, 78, 0.08);
+  }
+
+  /* Emoji */
+  .emoji {
+    margin-right: 6px;
+  }
+
+  /* Fiyat satır animasyon */
+  .fade {
+    animation: fadeIn 0.6s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Oklar */
+  .up {
+    color: #1ca300;
+    font-size: 20px;
+  }
+
+  .down {
+    color: #d00000;
+    font-size: 20px;
+  }
+
+  .update {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #666;
+  }
+
+  body.dark .update {
+    color: #bbb;
+  }
+
+  /* 📱 MOBİL GÖRÜNÜM */
+  @media (max-width: 480px) {
+    th, td {
+      padding: 10px 4px;
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    .container {
+      padding: 15px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<h1>Döviz Kurları</h1>
+
+
+<div class="container">
+
+<table>
+  <tr>
+    <th>Döviz / Altın</th>
+    <th>Fiyat</th>
+    <th></th>
+  </tr>
+
+  <!-- BURADAKİ KURLARI VE OK YÖNLERİNİ SEN AYARLIYORSUN -->
+  <tr class="fade">
+    <td><span class="emoji">💵</span> Dolar</td>
+    <td>42,17</td>
+     <td><span class="down">▼</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">💶</span> Euro</td>
+    <td>49,18</td>
+    <td><span class="up">▲</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">💷</span> Sterlin</td>
+    <td>55,35</td>
+    <td><span class="down">▼</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">🟡</span> Gram Altın</td>
+    <td>5551,47</td>
+    <td><span class="down">▼</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">🥇</span> Çeyrek Altın</td>
+    <td>9466</td>
+    <td><span class="down">▼</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">🏅</span> Tam Altın</td>
+    <td>37604,69</td>
+    <td><span class="up">▲</span></td>
+  </tr>
+
+  <tr class="fade">
+    <td><span class="emoji">👑</span> Cumhuriyet Altını</td>
+    <td>37719</td>
+    <td><span class="down">▼</span></td>
+  </tr>
+
+</table>
+
+</div>
+
+<!-- GÜNCELLEME TARİHİNİ SEN ELLE YAZIYORSUN -->
+<div class="update">
+  Son Güncelleme: <b>15.11.2025 — 21:37</b>
+</div>
+
+<script>
+  function toggleMode() {
+    document.body.classList.toggle("dark");
+  }
+</script>
+
+</body>
+</html>
